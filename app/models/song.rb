@@ -27,6 +27,6 @@ class Song < ActiveRecord::Base
   def note_contents
   # it should look among Note class for all the Note.content where Note.song_id equals Song.id
   contents = []
-  Note.content.all.where(Note.song_id = Song.id)
+  Note.content.all.where(Note.song_id = self.id)
   end
 end

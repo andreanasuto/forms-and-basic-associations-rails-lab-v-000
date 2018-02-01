@@ -25,6 +25,6 @@ class Song < ActiveRecord::Base
   end
 
   def note_contents
-    Note.where(id: self.id).content
+    Note.where(id: self.id)
   end
 end

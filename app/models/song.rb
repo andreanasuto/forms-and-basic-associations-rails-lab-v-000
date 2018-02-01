@@ -25,6 +25,7 @@ class Song < ActiveRecord::Base
   end
 
   def note_contents
-    Note.where(id: self.id)
+    contents = []
+    Note.all? { |note| note.song_id = self.id }
   end
 end

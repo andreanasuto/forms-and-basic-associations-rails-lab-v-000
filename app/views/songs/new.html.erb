@@ -4,11 +4,10 @@
   <%= f.label :title %>
   <%= f.text_field :title %>
   <%= f.label :genre_name %>
-  <%= f.text_field :genre_name, list: "genres_autocomplete" %>
-  <datalist id="genres_autocomplete">
-    <% Genre.all.each do |genre| %>
-      <option value="<%= genre.name %>">
-    <% end %>
-  <br>
+  <%= f.collection_select :genre_name, Genre.all, :id, :name %>
+  <br/>
+
   <%= f.submit %>
 <% end %>
+
+

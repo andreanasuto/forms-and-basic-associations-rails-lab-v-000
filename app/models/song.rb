@@ -25,6 +25,6 @@ class Song < ActiveRecord::Base
   end
 
   def note_contents
-    Note.find_all_by(self.id).content
+    Note.where(id: self.id).content
   end
 end

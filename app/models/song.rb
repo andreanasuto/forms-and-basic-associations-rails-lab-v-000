@@ -25,6 +25,6 @@ class Song < ActiveRecord::Base
   end
 
   def note_contents
-    self.artist.name
+    Note.find_by(self.id)
   end
 end
